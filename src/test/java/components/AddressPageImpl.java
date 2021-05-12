@@ -1,6 +1,7 @@
 package components;
 
 import interfaces.AddressPage;
+import interfaces.ShippingPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -14,7 +15,7 @@ public class AddressPageImpl implements AddressPage {
     }
 
     @Override
-    public void proceedToCheckout() {
+    public ShippingPage proceedToCheckout() {
         driver.findElement(processAddress).click();
         return new ShippingPageImpl(driver);
     }

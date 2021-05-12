@@ -5,11 +5,11 @@ import interfaces.SummaryPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class FinalPaymentImpl implements FinalPaymentPage {
+public class FinalPaymentPageImpl implements FinalPaymentPage {
    private WebDriver driver;
     private By confirmButton = new By.ByClassName("button btn btn-default button-medium");
 
-    public FinalPaymentImpl(WebDriver driver) {
+    public FinalPaymentPageImpl(WebDriver driver) {
         this.driver = driver;
     }
 
