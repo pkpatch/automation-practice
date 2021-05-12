@@ -1,9 +1,10 @@
 package interfaces;
 
+import components.FinalPaymentImpl;
 import org.openqa.selenium.WebDriver;
 
 public interface PaymentPage {
 
-    void payByBankWire(WebDriver driver);
+    FinalPaymentPage payByBankWire();
 
 }
