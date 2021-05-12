@@ -6,6 +6,6 @@ public interface SignInPage {
 
     void enterEmail();
     void enterPassword();
-    void clickSignIn(WebDriver driver);
+    AddressPage clickSignIn();
 
 }
