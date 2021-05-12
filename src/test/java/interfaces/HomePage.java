@@ -6,7 +6,7 @@ public interface HomePage {
 
     void addItemToCart();
 
-    void goToCheckout(WebDriver driver);
+    SummaryPage goToCheckout();
 
 
 }
