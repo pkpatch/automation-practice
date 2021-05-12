@@ -11,11 +11,11 @@ import java.util.Properties;
 
 public class SignInPageImpl implements SignInPage {
 
-    private WebDriver driver;
+    private final WebDriver driver;
 
-    private By emailInput = new By.ById("email");
-    private By passwordInput = new By.ById("password");
-    private By signInButton = new By.ById("SubmitLogin");
+    private final By emailInput = new By.ById("email");
+    private final By passwordInput = new By.ById("password");
+    private final By signInButton = new By.ById("SubmitLogin");
 
     private String login = null;
     private String password = null;

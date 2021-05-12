@@ -1,7 +1,6 @@
 package components;
 
 import interfaces.HomePage;
-import interfaces.SummaryPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -9,10 +8,10 @@ import java.util.concurrent.TimeUnit;
 
 public class HomePageImpl implements HomePage {
 
-    private WebDriver driver;
+    private final WebDriver driver;
 
-    private By addToCart = new By.ByCssSelector("a[data-id-product=\"1\"]");
-    private By checkout = new By.ByCssSelector("a[title=\"Proceed to checkout\"");
+    private final By addToCart = new By.ByCssSelector("a[data-id-product=\"1\"]");
+    private final By checkout = new By.ByCssSelector("a[title=\"Proceed to checkout\"");
 
     public HomePageImpl(WebDriver driver) {
         this.driver = driver;

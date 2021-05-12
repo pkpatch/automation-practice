@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 
 public class ConfirmationPageImpl implements ConfirmationPage {
     WebDriver driver;
-    private By confirmationStatus = new By.ByLinkText("dark");
+    private final By confirmationStatus = new By.ByLinkText("dark");
 
 
     public ConfirmationPageImpl(WebDriver driver) {

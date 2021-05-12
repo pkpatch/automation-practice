@@ -9,9 +9,9 @@ public class SeleniumTests {
     private HomePageImpl homePage;
     private AddressPageImpl addressPage;
     private ConfirmationPageImpl confirmationPage;
-    private FinalPaymentImpl finalPayment;
+    private FinalPaymentPageImpl finalPayment;
     private ShippingPageImpl shippingPage;
-    private  SignInPageImpl signInPage;
+    private SignInPageImpl signInPage;
 
 
     @BeforeAll
@@ -20,7 +20,7 @@ public class SeleniumTests {
     }
 
     @BeforeEach
-    void setup(){
+    void setup() {
         webDriver = new ChromeDriver();
         webDriver.manage().window().maximize();
         homePage = new HomePageImpl(webDriver);

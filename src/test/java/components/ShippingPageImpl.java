@@ -6,9 +6,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class ShippingPageImpl implements ShippingPage {
-   private WebDriver driver;
-    private By checkbox = new By.ByName("cgv");
-    private By proceed = new By.ByName("processCarrier");
+    private final WebDriver driver;
+    private final By checkbox = new By.ByName("cgv");
+    private final By proceed = new By.ByName("processCarrier");
 
     public ShippingPageImpl(WebDriver driver) {
         this.driver = driver;
@@ -20,7 +20,7 @@ public class ShippingPageImpl implements ShippingPage {
     }
 
     @Override
-    public FinalPaymentPage proceedToCheckout(WebDriver driver) {
+    public FinalPaymentPage proceedToCheckout() {
         driver.findElement(proceed).click();
         return new FinalPaymentPageImpl(driver);
     }
