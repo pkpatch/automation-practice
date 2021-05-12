@@ -16,8 +16,8 @@ public class PaymentPageImpl implements PaymentPage {
 
 
     @Override
-    public FinalPaymentImpl payByBankWire() {
+    public FinalPaymentPage payByBankWire() {
         driver.findElement(bankWireBox).click();
-        return new FinalPaymentImpl(driver);
+        return new FinalPaymentPageImpl(driver);
     }
 }
