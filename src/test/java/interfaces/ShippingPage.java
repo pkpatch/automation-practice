@@ -2,7 +2,7 @@ package interfaces;
 
 public interface ShippingPage {
 
-    void agreeToTermsOfService();
+    ShippingPage agreeToTermsOfService();
 
     PaymentPage proceedToCheckout();
 }

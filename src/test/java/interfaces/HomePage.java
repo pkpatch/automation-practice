@@ -2,7 +2,7 @@ package interfaces;
 
 public interface HomePage {
 
-    void addItemToCart();
+    HomePage addItemToCart();
 
     SummaryPage goToCheckout();
 
