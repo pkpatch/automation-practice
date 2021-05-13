@@ -2,9 +2,9 @@ package interfaces;
 
 public interface SignInPage {
 
-    void enterEmail();
+    SignInPage enterEmail();
 
-    void enterPassword();
+    SignInPage enterPassword();
 
     AddressPage clickSignIn();
 

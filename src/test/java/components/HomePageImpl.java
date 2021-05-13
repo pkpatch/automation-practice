@@ -3,11 +3,8 @@ package components;
 import interfaces.HomePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.util.concurrent.TimeUnit;
 
 public class HomePageImpl implements HomePage {
 
@@ -22,13 +19,14 @@ public class HomePageImpl implements HomePage {
     }
 
     @Override
-    public void addItemToCart() {
+    public HomePage addItemToCart() {
         driver.findElement(addToCart).click();
+        return this;
     }
 
     @Override
     public SummaryPageImpl goToCheckout() {
-        WebDriverWait wait = new WebDriverWait(driver,10);
+        WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.visibilityOfElementLocated(checkout));
         driver.findElement(checkout).click();
         return new SummaryPageImpl(driver);

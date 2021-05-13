@@ -15,8 +15,9 @@ public class ShippingPageImpl implements ShippingPage {
     }
 
     @Override
-    public void agreeToTermsOfService() {
+    public ShippingPage agreeToTermsOfService() {
         driver.findElement(checkbox).click();
+        return this;
     }
 
     @Override

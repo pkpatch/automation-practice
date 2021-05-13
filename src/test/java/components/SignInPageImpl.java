@@ -28,15 +28,15 @@ public class SignInPageImpl implements SignInPage {
     }
 
     @Override
-    public void enterEmail() {
+    public SignInPage enterEmail() {
         driver.findElement(emailInput).sendKeys(login);
-        //driver.manage().timeouts().implicitlyWait(500, TimeUnit.MILLISECONDS);
+        return this;
     }
 
     @Override
-    public void enterPassword() {
+    public SignInPage enterPassword() {
         driver.findElement(passwordInput).sendKeys(password);
-        //driver.manage().timeouts().implicitlyWait(500, TimeUnit.MILLISECONDS);
+        return this;
     }
 
     @Override

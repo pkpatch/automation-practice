@@ -33,21 +33,17 @@ public class SeleniumTests {
     }
 
     @Test
-    @DisplayName("Check Order Status")
-    void checkOrderStatus() {
-        homePage.addItemToCart();
-        summaryPage = homePage.goToCheckout();
+    @DisplayName("Complete happy path of purchasing an item from home page")
+    void completeHappyPathOfPurchasingAnItemFromHomePage() {
+        summaryPage = homePage.addItemToCart().goToCheckout();
 
         signInPage = summaryPage.proceedToCheckout();
 
-        signInPage.enterEmail();
-        signInPage.enterPassword();
-        addressPage = signInPage.clickSignIn();
+        addressPage = signInPage.enterEmail().enterPassword().clickSignIn();
 
         shippingPage = addressPage.proceedToCheckout();
 
-        shippingPage.agreeToTermsOfService();
-        paymentPage = shippingPage.proceedToCheckout();
+        paymentPage = shippingPage.agreeToTermsOfService().proceedToCheckout();
 
         finalPayment = paymentPage.payByBankWire();
 
