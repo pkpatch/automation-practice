@@ -25,12 +25,7 @@ public class HomePageImpl implements HomePage {
 
     @Override
     public SummaryPageImpl goToCheckout() {
-        //driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        driver.manage().timeouts().implicitlyWait(2500, TimeUnit.MILLISECONDS);
         driver.findElement(checkout).click();
         return new SummaryPageImpl(driver);
 

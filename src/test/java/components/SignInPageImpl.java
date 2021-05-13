@@ -15,7 +15,7 @@ public class SignInPageImpl implements SignInPage {
     private final WebDriver driver;
 
     private final By emailInput = new By.ById("email");
-    private final By passwordInput = new By.ById("password");
+    private final By passwordInput = new By.ById("passwd");
     private final By signInButton = new By.ById("SubmitLogin");
 
     private String login = null;
@@ -30,11 +30,13 @@ public class SignInPageImpl implements SignInPage {
     @Override
     public void enterEmail() {
         driver.findElement(emailInput).sendKeys(login);
+        //driver.manage().timeouts().implicitlyWait(500, TimeUnit.MILLISECONDS);
     }
 
     @Override
     public void enterPassword() {
         driver.findElement(passwordInput).sendKeys(password);
+        //driver.manage().timeouts().implicitlyWait(500, TimeUnit.MILLISECONDS);
     }
 
     @Override

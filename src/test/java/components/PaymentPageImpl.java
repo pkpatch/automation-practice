@@ -7,8 +7,8 @@ import org.openqa.selenium.WebDriver;
 
 public class PaymentPageImpl implements PaymentPage {
 
+    private final By bankWireBox = new By.ByClassName("bankwire");
     WebDriver driver;
-    private final By bankWireBox = new By.ByName("bankwire");
 
 
     public PaymentPageImpl(WebDriver driver) {

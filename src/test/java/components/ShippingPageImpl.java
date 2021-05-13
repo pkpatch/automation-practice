@@ -1,6 +1,5 @@
 package components;
 
-import interfaces.FinalPaymentPage;
 import interfaces.PaymentPage;
 import interfaces.ShippingPage;
 import org.openqa.selenium.By;

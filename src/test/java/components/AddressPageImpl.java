@@ -8,7 +8,7 @@ import org.openqa.selenium.WebDriver;
 public class AddressPageImpl implements AddressPage {
 
     private final WebDriver driver;
-    private final By processAddress = new By.ByLinkText("processAddress");
+    private final By processAddress = new By.ByName("processAddress");
 
     public AddressPageImpl(WebDriver driver) {
         this.driver = driver;

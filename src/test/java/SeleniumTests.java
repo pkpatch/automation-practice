@@ -1,4 +1,4 @@
-import components.*;
+import components.HomePageImpl;
 import interfaces.*;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.WebDriver;
@@ -21,10 +21,14 @@ public class SeleniumTests {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
     }
 
+    @AfterAll
+    static void tearDown() {
+        webDriver.close();
+    }
+
     @BeforeEach
     void setup() {
         webDriver = new ChromeDriver();
-        webDriver.manage().window().maximize();
         homePage = new HomePageImpl(webDriver);
     }
 
@@ -33,12 +37,22 @@ public class SeleniumTests {
     void checkOrderStatus() {
         homePage.addItemToCart();
         summaryPage = homePage.goToCheckout();
+
         signInPage = summaryPage.proceedToCheckout();
+
+        signInPage.enterEmail();
+        signInPage.enterPassword();
         addressPage = signInPage.clickSignIn();
+
         shippingPage = addressPage.proceedToCheckout();
+
+        shippingPage.agreeToTermsOfService();
         paymentPage = shippingPage.proceedToCheckout();
+
         finalPayment = paymentPage.payByBankWire();
+
         confirmationPage = finalPayment.confirmOrder();
+
         Assertions.assertTrue(confirmationPage.checkOrderStatus());
     }
 }

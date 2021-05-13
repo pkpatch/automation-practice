@@ -5,8 +5,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class ConfirmationPageImpl implements ConfirmationPage {
+    private final By classChequeIndent = new By.ByClassName("cheque-indent");
+    private final By strongTag = new By.ByTagName("strong");
     WebDriver driver;
-    private final By confirmationStatus = new By.ByLinkText("dark");
 
 
     public ConfirmationPageImpl(WebDriver driver) {
@@ -15,6 +16,6 @@ public class ConfirmationPageImpl implements ConfirmationPage {
 
     @Override
     public boolean checkOrderStatus() {
-        return driver.findElement(confirmationStatus).getText().equals("Your order on My Store is complete.");
+        return driver.findElement(classChequeIndent).findElement(strongTag).getText().equals("Your order on My Store is complete.");
     }
 }
