@@ -3,6 +3,9 @@ package components;
 import interfaces.HomePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
 
@@ -25,7 +28,8 @@ public class HomePageImpl implements HomePage {
 
     @Override
     public SummaryPageImpl goToCheckout() {
-        driver.manage().timeouts().implicitlyWait(2500, TimeUnit.MILLISECONDS);
+        WebDriverWait wait = new WebDriverWait(driver,10);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(checkout));
         driver.findElement(checkout).click();
         return new SummaryPageImpl(driver);
 
