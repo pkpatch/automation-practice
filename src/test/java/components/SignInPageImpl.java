@@ -1,5 +1,6 @@
 package components;
 
+import interfaces.AddressPage;
 import interfaces.SignInPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -37,7 +38,7 @@ public class SignInPageImpl implements SignInPage {
     }
 
     @Override
-    public AddressPageImpl clickSignIn() {
+    public AddressPage clickSignIn() {
         driver.findElement(signInButton).click();
         return new AddressPageImpl(driver);
     }

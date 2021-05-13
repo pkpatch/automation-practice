@@ -1,17 +1,19 @@
 import components.*;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
+import interfaces.*;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class SeleniumTests {
     static WebDriver webDriver;
-    private HomePageImpl homePage;
-    private AddressPageImpl addressPage;
-    private ConfirmationPageImpl confirmationPage;
-    private FinalPaymentPageImpl finalPayment;
-    private ShippingPageImpl shippingPage;
-    private SignInPageImpl signInPage;
+    private HomePage homePage;
+    private AddressPage addressPage;
+    private ConfirmationPage confirmationPage;
+    private FinalPaymentPage finalPayment;
+    private ShippingPage shippingPage;
+    private SignInPage signInPage;
+    private SummaryPage summaryPage;
+    private PaymentPage paymentPage;
 
 
     @BeforeAll
@@ -24,6 +26,20 @@ public class SeleniumTests {
         webDriver = new ChromeDriver();
         webDriver.manage().window().maximize();
         homePage = new HomePageImpl(webDriver);
+    }
+
+    @Test
+    @DisplayName("Check Order Status")
+    void checkOrderStatus() {
+        homePage.addItemToCart();
+        summaryPage = homePage.goToCheckout();
+        signInPage = summaryPage.proceedToCheckout();
+        addressPage = signInPage.clickSignIn();
+        shippingPage = addressPage.proceedToCheckout();
+        paymentPage = shippingPage.proceedToCheckout();
+        finalPayment = paymentPage.payByBankWire();
+        confirmationPage = finalPayment.confirmOrder();
+        Assertions.assertTrue(confirmationPage.checkOrderStatus());
     }
 }
 

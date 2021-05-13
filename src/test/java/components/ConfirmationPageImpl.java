@@ -14,7 +14,7 @@ public class ConfirmationPageImpl implements ConfirmationPage {
     }
 
     @Override
-    public void checkOrderStatus() {
-        driver.findElement(confirmationStatus).getText().equals("Your order on My Store is complete.");
+    public boolean checkOrderStatus() {
+        return driver.findElement(confirmationStatus).getText().equals("Your order on My Store is complete.");
     }
 }

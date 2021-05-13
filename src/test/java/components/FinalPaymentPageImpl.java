@@ -1,5 +1,6 @@
 package components;
 
+import interfaces.ConfirmationPage;
 import interfaces.FinalPaymentPage;
 import interfaces.SummaryPage;
 import org.openqa.selenium.By;
@@ -14,8 +15,8 @@ public class FinalPaymentPageImpl implements FinalPaymentPage {
     }
 
     @Override
-    public SummaryPage confirmOrder(WebDriver driver) {
+    public ConfirmationPage confirmOrder() {
         driver.findElement(confirmButton).click();
-        return new SummaryPageImpl(driver);
+        return new ConfirmationPageImpl(driver);
     }
 }

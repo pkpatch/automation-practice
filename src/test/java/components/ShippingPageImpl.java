@@ -1,6 +1,7 @@
 package components;
 
 import interfaces.FinalPaymentPage;
+import interfaces.PaymentPage;
 import interfaces.ShippingPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -20,8 +21,8 @@ public class ShippingPageImpl implements ShippingPage {
     }
 
     @Override
-    public FinalPaymentPage proceedToCheckout() {
+    public PaymentPage proceedToCheckout() {
         driver.findElement(proceed).click();
-        return new FinalPaymentPageImpl(driver);
+        return new PaymentPageImpl(driver);
     }
 }

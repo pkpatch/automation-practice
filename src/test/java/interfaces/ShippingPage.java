@@ -4,5 +4,5 @@ public interface ShippingPage {
 
     void agreeToTermsOfService();
 
-    FinalPaymentPage proceedToCheckout();
+    PaymentPage proceedToCheckout();
 }

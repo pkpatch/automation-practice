@@ -1,5 +1,7 @@
 package interfaces;
 
 public interface ConfirmationPage {
-    void checkOrderStatus();
+
+    boolean checkOrderStatus();
+
 }
