@@ -1,16 +1,16 @@
 package com.sparta.eng82.stepdefs;
 
+import com.sparta.eng82.components.pages.HomePageImpl;
+import com.sparta.eng82.stepdefs.utility.Pages;
 import com.sparta.eng82.stepdefs.utility.WebDriverManager;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.By;
 
 public class FooterNavigationStepDefs {
 
     @When("I click on {string} in the footer")
     public void iClickOnInTheFooter(String arg0) {
-        String test = WebDriverManager.driver.findElement(By.id("footer")).findElement(By.className("category_footer toggle-footer")).getText();
-        System.out.println(test);
+        Pages.tempPage = new HomePageImpl(WebDriverManager.driver).clickFooterElement(arg0);
     }
 
     @Then("I will go to the {string} page")

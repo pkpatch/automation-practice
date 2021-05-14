@@ -1,6 +1,8 @@
-package com.sparta.eng82.components;
+package com.sparta.eng82.components.pages;
 
-import com.sparta.eng82.interfaces.HomePage;
+import com.sparta.eng82.components.FooterPageFactory;
+import com.sparta.eng82.interfaces.Page;
+import com.sparta.eng82.interfaces.pages.HomePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -44,8 +46,12 @@ public class HomePageImpl implements HomePage {
         wait.until(ExpectedConditions.visibilityOfElementLocated(checkout));
     }
 
-    public void typeInSearchBar(String searchTerm){
+    public void typeInSearchBar(String searchTerm) {
         driver.findElement(searchBar).sendKeys(searchTerm, Keys.ENTER);
+    }
 
+    public <T extends Page> T clickFooterElement(String anchorContent) {
+        driver.findElement(By.id("footer")).findElement(By.linkText(anchorContent)).click();
+        return new FooterPageFactory(driver).getPage(anchorContent);
     }
 }

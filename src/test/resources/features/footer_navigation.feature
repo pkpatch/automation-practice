@@ -5,7 +5,14 @@ Feature: Navigate through the website using the footer
     When I click on "<nav>" in the footer
     Then I will go to the "<nav>" page
     Examples:
-    |nav|
-    |Women|
-    |specials|
+      | nav                         |
+      | Women                       |
+      | Specials                    |
+      | New products                |
+      | Best sellers                |
+      | Our stores                  |
+      | Contact us                  |
+      | Terms and conditions of use |
+      | About us                    |
+      | Sitemap                     |
 
