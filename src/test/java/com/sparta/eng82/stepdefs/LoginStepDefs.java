@@ -36,6 +36,10 @@ public class LoginStepDefs {
 
     @After
     public void tearDown() {
+
         WebDriverManager.tearDown();
+
     }
+
+
 }
