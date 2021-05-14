@@ -6,5 +6,6 @@ public interface HomePage {
 
     SummaryPage goToCheckout();
 
+    void typeInSearchBar(String searchTerm);
 
 }

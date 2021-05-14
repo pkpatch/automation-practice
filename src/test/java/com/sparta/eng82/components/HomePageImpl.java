@@ -2,6 +2,7 @@ package com.sparta.eng82.components;
 
 import com.sparta.eng82.interfaces.HomePage;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -12,6 +13,7 @@ public class HomePageImpl implements HomePage {
 
     private final By addToCart = new By.ByCssSelector("a[data-id-product=\"1\"]");
     private final By checkout = new By.ByCssSelector("a[title=\"Proceed to checkout\"");
+    private final By searchBar = new By.ById("search_query_top");
 
     public HomePageImpl(WebDriver driver) {
         this.driver = driver;
@@ -40,5 +42,10 @@ public class HomePageImpl implements HomePage {
     private void wait(int time) {
         WebDriverWait wait = new WebDriverWait(driver, time);
         wait.until(ExpectedConditions.visibilityOfElementLocated(checkout));
+    }
+
+    public void typeInSearchBar(String searchTerm){
+        driver.findElement(searchBar).sendKeys(searchTerm, Keys.ENTER);
+
     }
 }
