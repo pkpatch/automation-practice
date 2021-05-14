@@ -1,7 +1,7 @@
-package components;
+package com.sparta.eng82.components;
 
-import interfaces.SignInPage;
-import interfaces.SummaryPage;
+import com.sparta.eng82.interfaces.SignInPage;
+import com.sparta.eng82.interfaces.SummaryPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 

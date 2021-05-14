@@ -1,7 +1,7 @@
-package components;
+package com.sparta.eng82.components;
 
-import interfaces.PaymentPage;
-import interfaces.ShippingPage;
+import com.sparta.eng82.interfaces.PaymentPage;
+import com.sparta.eng82.interfaces.ShippingPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
