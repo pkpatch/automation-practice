@@ -1,44 +1,29 @@
 package com.sparta.eng82.stepdefs;
 
 import com.sparta.eng82.components.HomePageImpl;
-import com.sparta.eng82.interfaces.HomePage;
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
+import com.sparta.eng82.stepdefs.utility.Pages;
+import com.sparta.eng82.stepdefs.utility.WebDriverManager;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.jupiter.api.Assertions;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class AddToBasketStepdefs {
 
-    private WebDriver driver;
-    private HomePage homePage;
-
-    @Before
-    public void setup() {
-        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
-    }
-
     @Given("I am on the home page")
     public void iAmOnTheHomePage() {
-        driver = new ChromeDriver();
-        homePage = new HomePageImpl(driver);
+        WebDriverManager.driver = new ChromeDriver();
+        Pages.homePage = new HomePageImpl(WebDriverManager.driver);
     }
 
     @When("I add an item to the basket")
     public void iAddAnItemToTheBasket() {
-        homePage.addItemToCart();
+        Pages.homePage.addItemToCart();
     }
 
     @Then("I see an item in my basket")
     public void iSeeAnItemInMyBasket() {
-        Assertions.assertTrue(((HomePageImpl) homePage).addToBasketStatus());
-    }
-
-    @After
-    public void tearDown() {
-        driver.quit();
+        Assertions.assertTrue(((HomePageImpl) Pages.homePage).addToBasketStatus());
     }
 }
