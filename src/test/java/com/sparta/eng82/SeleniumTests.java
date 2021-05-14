@@ -1,7 +1,7 @@
 package com.sparta.eng82;
 
-import com.sparta.eng82.components.HomePageImpl;
-import com.sparta.eng82.interfaces.*;
+import com.sparta.eng82.components.pages.HomePageImpl;
+import com.sparta.eng82.interfaces.pages.*;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;

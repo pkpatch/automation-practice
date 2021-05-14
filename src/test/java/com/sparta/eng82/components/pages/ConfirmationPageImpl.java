@@ -1,6 +1,6 @@
-package com.sparta.eng82.components;
+package com.sparta.eng82.components.pages;
 
-import com.sparta.eng82.interfaces.ConfirmationPage;
+import com.sparta.eng82.interfaces.pages.ConfirmationPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 

@@ -1,6 +1,6 @@
 package com.sparta.eng82.stepdefs;
 
-import com.sparta.eng82.components.HomePageImpl;
+import com.sparta.eng82.components.pages.HomePageImpl;
 import com.sparta.eng82.stepdefs.utility.Pages;
 import com.sparta.eng82.stepdefs.utility.WebDriverManager;
 import io.cucumber.java.en.Given;
