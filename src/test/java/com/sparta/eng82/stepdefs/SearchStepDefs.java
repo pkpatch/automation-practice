@@ -3,6 +3,7 @@ package com.sparta.eng82.stepdefs;
 import com.sparta.eng82.components.HomePageImpl;
 import com.sparta.eng82.interfaces.HomePage;
 import com.sparta.eng82.interfaces.SignInPage;
+import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -33,5 +34,12 @@ public class SearchStepDefs {
     @Then("I see the relevant search results for {string}")
     public void iSeeTheRelevantSearchResultsFor(String arg0) {
         Assertions.assertEquals("http://automationpractice.com/index.php?controller=search&orderby=position&orderway=desc&search_query="+ arg0 +"&submit_search=", driver.getCurrentUrl());
+    }
+
+    @After
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+        }
     }
 }
