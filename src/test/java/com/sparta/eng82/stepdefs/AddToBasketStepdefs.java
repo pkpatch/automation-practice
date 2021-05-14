@@ -2,18 +2,14 @@ package com.sparta.eng82.stepdefs;
 
 import com.sparta.eng82.components.HomePageImpl;
 import com.sparta.eng82.interfaces.HomePage;
-import com.sparta.eng82.interfaces.SignInPage;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.jupiter.api.Assertions;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class AddToBasketStepdefs {
 

@@ -5,7 +5,6 @@ import com.sparta.eng82.interfaces.SignInPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
