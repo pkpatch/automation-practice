@@ -26,10 +26,19 @@ public class HomePageImpl implements HomePage {
 
     @Override
     public SummaryPageImpl goToCheckout() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(checkout));
+        wait(10);
         driver.findElement(checkout).click();
         return new SummaryPageImpl(driver);
+    }
 
+    public boolean addToBasketStatus() {
+        wait(10);
+        String message = driver.findElement(By.tagName("h2")).getText();
+        return message.equals("Product successfully added to your shopping cart");
+    }
+
+    private void wait(int time) {
+        WebDriverWait wait = new WebDriverWait(driver, time);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(checkout));
     }
 }
