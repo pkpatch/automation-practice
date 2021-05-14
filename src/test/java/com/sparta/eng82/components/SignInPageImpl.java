@@ -1,9 +1,10 @@
-package components;
+package com.sparta.eng82.components;
 
-import interfaces.AddressPage;
-import interfaces.SignInPage;
+import com.sparta.eng82.interfaces.AddressPage;
+import com.sparta.eng82.interfaces.SignInPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+
 
 import java.io.FileInputStream;
 import java.io.IOException;

@@ -1,6 +1,6 @@
-package components;
+package com.sparta.eng82.components;
 
-import interfaces.HomePage;
+import com.sparta.eng82.interfaces.HomePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
