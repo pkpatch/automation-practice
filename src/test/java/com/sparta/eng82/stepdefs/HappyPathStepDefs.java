@@ -1,11 +1,31 @@
 package com.sparta.eng82.stepdefs;
 
+import com.sparta.eng82.interfaces.*;
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.WebDriver;
 
 public class HappyPathStepDefs {
+    private WebDriver driver;
+    private HomePage homePage;
+    private AddressPage addressPage;
+    private ConfirmationPage confirmationPage;
+    private FinalPaymentPage finalPaymentPage;
+    private PaymentPage paymentPage;
+    private ShippingPage shippingPage;
+    private SignInPage signInPage;
+    private SummaryPage summaryPage;
+
+    @Before
+    public void setup(){
+        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
+    }
+
+
     @Given("I am on the home page")
     public void iAmOnTheHomePage() {
     }
@@ -120,5 +140,10 @@ public class HappyPathStepDefs {
 
     @Then("I should see written confirmation")
     public void iShouldSeeWrittenConfirmation() {
+    }
+
+    @After
+    public void teardown(){
+        driver.quit();
     }
 }
