@@ -1,45 +1,41 @@
 package com.sparta.eng82.stepdefs;
 
 import com.sparta.eng82.components.HomePageImpl;
-import com.sparta.eng82.interfaces.SignInPage;
+import com.sparta.eng82.stepdefs.utility.Pages;
+import com.sparta.eng82.stepdefs.utility.WebDriverManager;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class LoginStepDefs {
 
-    private WebDriver driver;
-
-    private SignInPage signInPage;
-
     @Before
     public void setup() {
-        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
+        WebDriverManager.setUp();
     }
 
     @Given("I am on the checkout sign in page")
     public void iAmOnTheCheckoutSignInPage() {
-        driver = new ChromeDriver();
-        signInPage = new HomePageImpl(driver).addItemToCart().goToCheckout().proceedToSignIn();
+        WebDriverManager.driver = new ChromeDriver();
+        Pages.signInPage = new HomePageImpl(WebDriverManager.driver).addItemToCart().goToCheckout().proceedToSignIn();
     }
 
     @When("I enter my credentials")
     public void iEnterMyCredentials() {
-        signInPage.enterEmail();
-        signInPage.enterPassword();
+        Pages.signInPage.enterEmail();
+        Pages.signInPage.enterPassword();
     }
 
     @Then("I proceed with the checkout")
     public void iProceedWithTheCheckout() {
-        signInPage.clickSignIn();
+        Pages.signInPage.clickSignIn();
     }
 
     @After
     public void tearDown() {
-        driver.quit();
+        WebDriverManager.tearDown();
     }
 }
