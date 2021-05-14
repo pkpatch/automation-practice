@@ -14,7 +14,7 @@ public class SummaryPageImpl implements SummaryPage {
     }
 
     @Override
-    public SignInPage proceedToCheckout() {
+    public SignInPage proceedToSignIn() {
         driver.findElement(processSignin).click();
         return new SignInPageImpl(driver);
     }

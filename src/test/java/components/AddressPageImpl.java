@@ -15,7 +15,7 @@ public class AddressPageImpl implements AddressPage {
     }
 
     @Override
-    public ShippingPage proceedToCheckout() {
+    public ShippingPage proceedToShippingPage() {
         driver.findElement(processAddress).click();
         return new ShippingPageImpl(driver);
     }

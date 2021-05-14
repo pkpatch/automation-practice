@@ -34,22 +34,20 @@ public class SeleniumTests {
 
     @Test
     @DisplayName("Complete happy path of purchasing an item from home page")
-    void completeHappyPathOfPurchasingAnItemFromHomePage() {
-        summaryPage = homePage.addItemToCart().goToCheckout();
-
-        signInPage = summaryPage.proceedToCheckout();
-
-        addressPage = signInPage.enterEmail().enterPassword().clickSignIn();
-
-        shippingPage = addressPage.proceedToCheckout();
-
-        paymentPage = shippingPage.agreeToTermsOfService().proceedToCheckout();
-
-        finalPayment = paymentPage.payByBankWire();
-
-        confirmationPage = finalPayment.confirmOrder();
-
+    void completeHappyPathOfPurchasingAnItemFromHomePageMyWay() {
+        confirmationPage = homePage.addItemToCart()
+                .goToCheckout()
+                .proceedToSignIn()
+                .enterEmail()
+                .enterPassword()
+                .clickSignIn()
+                .proceedToShippingPage()
+                .agreeToTermsOfService()
+                .proceedToPaymentPage()
+                .payByBankWire()
+                .confirmOrder();
         Assertions.assertTrue(confirmationPage.checkOrderStatus());
+
     }
 }
 
