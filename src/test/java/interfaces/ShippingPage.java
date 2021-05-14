@@ -4,5 +4,5 @@ public interface ShippingPage {
 
     ShippingPage agreeToTermsOfService();
 
-    PaymentPage proceedToCheckout();
+    PaymentPage proceedToPaymentPage();
 }

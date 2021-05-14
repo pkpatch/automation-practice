@@ -21,7 +21,7 @@ public class ShippingPageImpl implements ShippingPage {
     }
 
     @Override
-    public PaymentPage proceedToCheckout() {
+    public PaymentPage proceedToPaymentPage() {
         driver.findElement(proceed).click();
         return new PaymentPageImpl(driver);
     }
